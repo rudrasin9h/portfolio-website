@@ -22,7 +22,7 @@ export const projects = [
     decision: 'Encrypt payloads with client-side AES-256-GCM and compress data with pako.js before transmission. Use the Web Audio API and Canvas to visualize a real-time Fast Fourier Transform (FFT).',
     result: 'Browser-based file transfer with encrypted, compressed payloads and a live view of the received frequencies.',
     image: '/project-shots/airchirpui.png',
-    github: 'https://github.com/rudrasin9h/acoustic-data-transmission-devjams26', demo: '', mark: 'ACOUSTIC MODEM',
+    github: 'https://github.com/rudrasin9h/acoustic-data-transmission-devjams26', demo: 'https://airchirp-d7g306c38-rudrapsin9h-3188.vercel.app/', mark: 'ACOUSTIC MODEM',
   },
   {
     number: '002', title: 'TabCluster', date: 'SEPTEMBER 2026', status: 'PEER-TO-PEER COMPUTE',
