@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Menu, Moon, Sun, X, Zap } from 'lucide-react';
-const links = [{ id: 'cover', label: 'Cover' }, { id: 'origin', label: 'Origin' }, { id: 'skills', label: 'Arsenal' }, { id: 'projects', label: 'Missions' }, { id: 'workshop', label: 'Workshop' }, { id: 'contact', label: 'Contact' }];
+const links = [{ id: 'cover', label: 'Cover' }, { id: 'origin', label: 'About Me' }, { id: 'skills', label: 'Skills' }, { id: 'projects', label: 'Projects' }, { id: 'contact', label: 'Contact' }];
 export default function Navigation({ darkMode, onToggleTheme }) {
   const [active, setActive] = useState('cover'); const [open, setOpen] = useState(false); const [scrolled, setScrolled] = useState(false);
   useEffect(() => {
