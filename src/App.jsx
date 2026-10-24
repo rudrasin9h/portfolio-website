@@ -1,13 +1,10 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ArrowDown, ArrowRight, ArrowUpRight, Braces, Code2, Github, Mail, Terminal, FlaskConical, Sparkles, ExternalLink, MousePointer2 } from 'lucide-react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Navigation from './components/Navigation.jsx';
 import SectionHeading from './components/SectionHeading.jsx';
 import ProjectModal from './components/ProjectModal.jsx';
 import { profile, skills, projects } from './data/portfolio.js';
 
-gsap.registerPlugin(ScrollTrigger);
 const iconMap = { code: Code2, terminal: Terminal, flask: FlaskConical };
 
 function CoverIllustration() {
@@ -43,26 +40,13 @@ export default function App() {
     document.documentElement.dataset.theme = enabled ? 'dark' : 'light';
     return enabled;
   });
-  const root = useRef(null);
   useEffect(() => {
     document.documentElement.dataset.theme = darkMode ? 'dark' : 'light';
     window.localStorage.setItem('rudra-theme', darkMode ? 'dark' : 'light');
     document.querySelector('meta[name="theme-color"]')?.setAttribute('content', darkMode ? '#201f1d' : '#f4ebdd');
   }, [darkMode]);
-  useEffect(() => {
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (reduceMotion) return;
-    const ctx = gsap.context(() => {
-      gsap.from('.hero-copy > *', { y: 24, opacity: 0, duration: .7, stagger: .12, ease: 'power3.out', delay: .12 });
-      gsap.from('.hero-art', { scale: .92, opacity: 0, duration: .9, ease: 'back.out(1.3)', delay: .18 });
-      gsap.utils.toArray('.reveal').forEach(el => gsap.fromTo(el, { y: 28, opacity: 0 }, { y: 0, opacity: 1, duration: .65, ease: 'power2.out', scrollTrigger: { trigger: el, start: 'top 88%', once: true } }));
-      gsap.utils.toArray('.comic-panel, .skill-card, .project-card').forEach((el, i) => gsap.fromTo(el, { y: 24, opacity: 0 }, { y: 0, opacity: 1, duration: .55, delay: (i % 3) * .08, ease: 'power2.out', scrollTrigger: { trigger: el, start: 'top 91%', once: true } }));
-    }, root);
-    return () => ctx.revert();
-  }, []);
-
   const scrollTo = id => document.getElementById(id)?.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
-  return <div ref={root} className="app-shell">
+  return <div className="app-shell">
     <Navigation darkMode={darkMode} onToggleTheme={() => setDarkMode(mode => !mode)} />
     <main>
       <section id="cover" className="hero section-wrap">

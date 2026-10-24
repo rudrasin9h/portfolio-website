@@ -72,6 +72,7 @@ body{min-width:0}
 	.comic-panel p,.skill-card p,.project-info p{font-size:1.05rem}
 	.project-visual{min-height:490px}
 }
+.hero h1{letter-spacing:0}
 :root[data-theme='dark'] .skill-card .skill-tags span{background:var(--surface-raised);color:var(--ink)}
 :root[data-theme='dark'] .workshop{background:#292724;color:var(--ink)}
 :root[data-theme='dark'] .workshop .notebook-head{color:#171717}
