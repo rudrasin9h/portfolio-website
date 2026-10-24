@@ -8,28 +8,19 @@ import { profile, skills, projects } from './data/portfolio.js';
 const iconMap = { code: Code2, terminal: Terminal, flask: FlaskConical };
 
 function CoverIllustration() {
-  return <div className="hero-art" aria-label="Stylized original illustration of a developer at work" role="img">
+  return <div className="hero-art" aria-label="Portrait composition">
     <div className="art-sunburst"></div><div className="art-orbit art-orbit--one"></div><div className="art-orbit art-orbit--two"></div>
-    <div className="art-sticker art-sticker--top">IDEA<br/>IN PROGRESS</div><div className="art-sticker art-sticker--side">FIG. 01</div>
-    <svg className="developer-illustration" viewBox="0 0 430 490" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <path d="M69 452L87 337Q94 286 138 274L177 263H261L304 280Q337 294 345 345L367 452H69Z" fill="#2878B5" stroke="#171717" strokeWidth="8" strokeLinejoin="round"/>
-      <path d="M161 263L169 219H257L269 269L219 318L161 263Z" fill="#F4B28A" stroke="#171717" strokeWidth="7" strokeLinejoin="round"/>
-      <path d="M129 140Q130 57 215 54Q302 55 304 145L292 214Q278 257 218 266Q157 256 141 215L129 140Z" fill="#F4B28A" stroke="#171717" strokeWidth="8"/>
-      <path d="M127 150Q98 83 151 44Q194 11 251 37Q312 56 306 131L292 156L274 108Q232 113 201 91Q180 121 140 126L127 150Z" fill="#171717" stroke="#171717" strokeWidth="8" strokeLinejoin="round"/>
-      <path d="M164 165Q178 151 192 165M241 165Q256 151 270 165" stroke="#171717" strokeWidth="7" strokeLinecap="round"/>
-      <path d="M208 176L201 198L216 202" stroke="#171717" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round"/>
-      <path d="M187 224Q218 245 247 220" stroke="#171717" strokeWidth="6" strokeLinecap="round"/>
-      <path d="M166 280L215 321L264 280L284 301L246 353H185L147 301L166 280Z" fill="#F4EBDD" stroke="#171717" strokeWidth="7" strokeLinejoin="round"/>
-      <path d="M188 351L160 451M250 351L282 451" stroke="#171717" strokeWidth="8" strokeLinecap="round"/>
-      <path d="M91 331L135 304L174 357L143 397L83 379Z" fill="#F4B28A" stroke="#171717" strokeWidth="8" strokeLinejoin="round"/>
-      <path d="M338 331L296 304L258 357L289 397L348 379Z" fill="#F4B28A" stroke="#171717" strokeWidth="8" strokeLinejoin="round"/>
-      <path d="M128 380L163 398L148 425L108 407Z" fill="#FFD23F" stroke="#171717" strokeWidth="7" strokeLinejoin="round"/>
-      <path d="M302 380L267 398L282 425L322 407Z" fill="#FFD23F" stroke="#171717" strokeWidth="7" strokeLinejoin="round"/>
-      <path d="M179 290L216 321L251 290" stroke="#171717" strokeWidth="5" strokeLinecap="round"/>
-      <path d="M195 376H237" stroke="#171717" strokeWidth="5" strokeLinecap="round"/>
+    <svg className="annotation-arrows" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M12 23 C17 19 21 20 26 27"/><path d="M23 26 L26 27 L25 24"/>
+      <path d="M89 58 C84 56 81 58 77 64"/><path d="M77 64 L78 60 M77 64 L81 63"/>
     </svg>
-    <div className="art-caption"><span className="mono">CHARACTER PROFILE</span><strong>THE BUILDER</strong><span>Curious by default.</span></div>
-    <span className="art-sfx">ZAP!</span>
+    <span className="hero-annotation hero-annotation--creator" aria-hidden="true">CREATOR</span>
+    <span className="hero-annotation hero-annotation--thinker" aria-hidden="true">THINKER</span>
+    <span className="hero-annotation hero-annotation--problem-solver" aria-hidden="true">PROBLEM SOLVER</span>
+    <span className="hero-annotation hero-annotation--innovator" aria-hidden="true">INNOVATOR</span>
+    <span className="hero-annotation hero-annotation--builder" aria-hidden="true">BUILDER</span>
+    <span className="hero-annotation hero-annotation--curious-mind" aria-hidden="true">CURIOUS MIND</span>
+    <img className="developer-portrait" src="/profile-photo.png" alt="Rudra Pratap Singh" />
   </div>;
 }
 
