@@ -38,7 +38,17 @@ function CoverIllustration() {
 
 export default function App() {
   const [selectedProject, setSelectedProject] = useState(null);
+  const [darkMode, setDarkMode] = useState(() => {
+    const enabled = window.localStorage.getItem('rudra-theme') === 'dark';
+    document.documentElement.dataset.theme = enabled ? 'dark' : 'light';
+    return enabled;
+  });
   const root = useRef(null);
+  useEffect(() => {
+    document.documentElement.dataset.theme = darkMode ? 'dark' : 'light';
+    window.localStorage.setItem('rudra-theme', darkMode ? 'dark' : 'light');
+    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', darkMode ? '#201f1d' : '#f4ebdd');
+  }, [darkMode]);
   useEffect(() => {
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (reduceMotion) return;
@@ -53,7 +63,7 @@ export default function App() {
 
   const scrollTo = id => document.getElementById(id)?.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
   return <div ref={root} className="app-shell">
-    <Navigation />
+    <Navigation darkMode={darkMode} onToggleTheme={() => setDarkMode(mode => !mode)} />
     <main>
       <section id="cover" className="hero section-wrap">
         <div className="hero-copy"><div className="eyebrow"><span className="eyebrow-line"></span> ISSUE NO. 001 <span className="eyebrow-divider">/</span> ORIGIN FILE</div>
